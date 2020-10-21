@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/mobile.css">
+
+    <!-- Fontawsome -->
+
+    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" type="image/png" href="./favicon-32x32.png"/>
+    <link rel="shortcut icon" type="image/ico" href="http://nicklasholmqvist.se/favicon.ico"/>
+
+    <title>Simpel Addition | Nicklas Holmqvist</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div class="math-container">
+            <div class="math-item" id="mathItem">
+                <h1>Simpel Addition</h1>
+                <div class="item-number">
+                    <p id="nr1" class="nr1">5</p>
+                    <p id="plus">+</p>
+                    <p id="nr2">6</p>
+                    <p>=</p>
+                    <input type="tel" id="answer" class="user-input" autofocus>
+                </div>                
+                <form id="Myform">
+                <input type="button" class="correct-btn" id="correctBtn" value="Rätta" onclick="correctedNumber()">
+                <input type="button" class="correct-btn new" id="newBtn" value="Nytt tal" onclick="newNumber()">
+                <!-- <input type="button" class="correct-btn" id="newGabeBtn" value="Nytt spel" onclick="startNewGame()"> -->                
+                </form>
+                <p id="correct" class="correct"></p>
+                <!-- <p id="diff">40</p> -->
+                <!-- <form class="difficulty">
+                    <label for="difficulty">Svårighetsgrad</label>
+                    <input type="tel" id="diffNr">
+                    <input type="button" class="correct-btn" id="diffBtn" value="Ändra" onclick="diffBtn()">
+                </form> -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span>Skapad av: Nicklas Holmqvist</span>
+        <a href="mailto:nicklas_holmqvist@outlook.com"><i class="far fa-envelope"></i></a>
+    </footer>    
+    <script src="./style/app.js"></script>
+</body>
+</html>

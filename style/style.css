@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Bubblegum Sans', cursive;
+
+    text-shadow: .5px 1px 5px #0f0f0f55;    
+}
+html {
+    height: 100%;
+}
+
+body {
+    background: #E2E2E2;
+    height: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+.math-container {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+h1 {
+    font-size: 3rem;
+
+    color: #FFF8F0;
+
+    padding-bottom: 5rem;
+}
+
+p {
+    font-size: 3rem;
+    padding-left: .5rem;
+
+    color: #FFF8F0;
+
+    transition: all .5s ease;
+}
+
+p:first-child {
+    padding-left: 0;
+}
+
+a {
+    color: #011627;
+    padding-left: .3rem;
+}
+
+.math-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 25rem;
+    height: 35rem;
+
+    padding: 2rem 1rem 1rem 1rem;
+
+    border: .5rem rgb(253, 253, 253) solid;
+    border-radius: 15px;
+
+    background: #FF9F1C;
+
+    transition: all .5s ease;
+
+    box-shadow: 1px 1px 5px #0f0f0f55;
+}
+
+.item-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-input {
+    width: 6rem;
+
+    font-size: 3rem;
+    text-align: center;
+
+    margin-left: .5rem;
+    padding: .2rem 0 .2rem 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: all .5s ease;
+    
+    box-shadow: 1px 1px 5px #0f0f0f55;
+    text-shadow: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1rem;
+
+    padding: 1rem .5rem;
+
+    transition: all .5s ease;
+}
+
+.correct-btn {
+    justify-content: center;
+
+    width: 8rem;
+    height: 3rem;
+
+    color: #011627;
+    background: #FFF8F0;
+
+    font-size: 1.5rem;
+
+    border: none;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    translate: all .3s ease;
+
+    box-shadow: 1px 1px 5px #0f0f0f55;
+}
+
+.new {
+    text-align: center;
+    display: none;
+}
+
+.correct {
+    height: 2rem;
+    font-size: 1.5rem;
+
+    transition: all .5s ease;
+}
+
+footer {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+}
+
+span {
+    text-shadow: none;
+}
+
+.fa-envelope {
+    text-shadow: none;
+}
+
