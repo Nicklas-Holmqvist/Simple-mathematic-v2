@@ -6,6 +6,13 @@ const correctAnswer = "Du är grym!";
 const wrongAnswer = "Fel, försök igen!";
 let difficulty = 5;
 
+let numberOfWrong = 0;
+let numberOfRight = 0;
+
+console.log(numberOfWrong);
+console.log(numberOfRight);
+
+
 /* 
 Alla variabler som kan nås utanför frunktioner
 */
@@ -90,15 +97,6 @@ function newNumberTwo() {
 function getRandomNumber(limit) {
     const randomValue = Math.random() * limit;
 
-    // const randomNotNull = () => {
-    //     if (randomValue == 0) {
-    //         return (randomValue + 1) * limit
-    //     } else {
-    //         return randomValue * limit
-    //     }
-    // }
-    // console.log(randomNotNull())
-
     return Math.ceil(randomValue);
 }
 
@@ -116,6 +114,8 @@ function newNumber () {
     newBtn.style.display = 'none';
     correctBtn.style.display = 'flex';
     correct.innerText = '';
+    console.log(numberOfWrong);
+    console.log(numberOfRight);
 }
 
 /* 
@@ -140,6 +140,8 @@ if (numberSum === userSum) {
     newBtn.style.display = 'flex';
     correctBtn.style.display = 'none';
 
+    numberOfRight += 1;
+
     mathItem.style.background = '#7FB069';
 
     disableInput.style.backgroundColor = 'rgb(255,255,255)';
@@ -149,6 +151,8 @@ if (numberSum === userSum) {
 }   else {
     corrected.innerText = wrongAnswer;
     disableInput.value = '';
+
+    numberOfWrong += 1;
 
     mathItem.style.background = 'rgb(255,0,0)';
 }
