@@ -4,6 +4,7 @@ Rätt och fel meddelande
 
 const correctAnswer = "Du är grym!";
 const wrongAnswer = "Fel, försök igen!";
+let difficulty = 5;
 
 /* 
 Alla variabler som kan nås utanför frunktioner
@@ -19,6 +20,9 @@ let correctBtn = document.getElementById('correctBtn');
 let pTag = document.querySelectorAll("p");
 let h1Tag = document.querySelectorAll(".h1");
 
+const test = document.getElementById('answer');
+console.log(disableInput);
+
 // const diffStd = document.getElementById('diff').innerText;
 // console.log(Number(diffStd));
 
@@ -26,21 +30,58 @@ let h1Tag = document.querySelectorAll(".h1");
 Alla funktioner
 */
 
-// function changeDiff() {
-//     document.getElementById('diffNr').value;
-
-// }
+let diffAdd = document.querySelector('#test').addEventListener('click', () => {
+    if (difficulty == 5) {
+        difficulty = 10;
+        console.log('Tal mellan 0-20')
+        newNumber ()
+    }
+    else if (difficulty == 10) {
+        difficulty = 20;
+        console.log('Tal mellan 0-40')
+        newNumber ()
+    }
+    else if (difficulty == 20) {
+        difficulty = 30;
+        console.log('Tal mellan 0-60')
+        newNumber ()
+    }
+    else if (difficulty == 30) {
+        difficulty = 40;
+        console.log('Tal mellan 0-80')
+        newNumber ()
+    }
+    else if (difficulty == 40) {
+        difficulty = 50;
+        console.log('Tal mellan 0-100')
+        newNumber ()
+    }
+    else if (difficulty == 50) {
+        difficulty = 100;
+        console.log('Tal mellan 0-200')
+        newNumber ()
+    }
+    else if (difficulty == 100) {
+        difficulty = 200;
+        console.log('Tal mellan 0-400')
+        newNumber ()
+    }   else {
+        difficulty = 5;
+        console.log('Tal mellan 0-10')
+        newNumber()
+    }
+})
 
 // Funktion för nummer 1
 function newNumberOne() {
-    let nr1 = getRandomNumber(60);
+    let nr1 = getRandomNumber(difficulty);
     console.log(nr1)
     return nr1;
 }
 
 // Funktion för nummer 2
 function newNumberTwo() {
-    let nr2 = getRandomNumber(60);
+    let nr2 = getRandomNumber(difficulty);
     console.log(nr2)
     return nr2
 }
@@ -48,7 +89,17 @@ function newNumberTwo() {
 // Random funktion
 function getRandomNumber(limit) {
     const randomValue = Math.random() * limit;
-    return Math.round(randomValue);
+
+    // const randomNotNull = () => {
+    //     if (randomValue == 0) {
+    //         return (randomValue + 1) * limit
+    //     } else {
+    //         return randomValue * limit
+    //     }
+    // }
+    // console.log(randomNotNull())
+
+    return Math.ceil(randomValue);
 }
 
 /* 
@@ -79,7 +130,6 @@ function correctedNumber () {
     let userSum = Number(answer);
 
     console.log(numberSum);
-    console.log(userSum);
 
 // Om det är rätt inmatat värde
 if (numberSum === userSum) {
