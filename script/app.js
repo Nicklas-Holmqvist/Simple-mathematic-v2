@@ -3,6 +3,7 @@ window.addEventListener('load', main);
 function main() {
     newNumber()
     addEventListeners()
+    fetchLS()
 }
 
 /**  */
@@ -29,7 +30,7 @@ const correctAnswer = "Rätt!";
 const wrongAnswer = "Fel, försök igen!";
 
 // Svårighetsgrad
-let difficulty = 5;
+let difficulty = 10;
 
 // Rätt och Fel variablerna
 let numberOfWrong = 0
@@ -93,7 +94,7 @@ function setMinus(){
 
 /** Svårighetsgrad där ett värde ökar random talen */
 let diffAdd = document.querySelector('#higherNumbers').addEventListener('click', () => {
-    if (difficulty == 5) {
+    if (difficulty == 10) {
         difficulty = 20;
         newNumber ()
     }
@@ -109,7 +110,7 @@ let diffAdd = document.querySelector('#higherNumbers').addEventListener('click',
         difficulty = 200;
         newNumber ()
     }   else {
-        difficulty = 5;
+        difficulty = 10;
         newNumber()
     }
 })
@@ -209,8 +210,9 @@ function wrongResult() {
     corrected.innerText = wrongAnswer;
     disableInput.value = '';
 
-    numberOfWrong += 1;        
+    numberOfWrong += 1;      
     updateScore();
+    
 
     wrongBackground.classList.add("wrong-background")
     mathItem.style.borderColor = '#FF0000';
@@ -228,6 +230,33 @@ function afterWrongUpdate() {
     }
 }
 
+function saveToLS() {
+    localStorage.setItem("nrRight", numberOfRight)
+    localStorage.setItem("nrWrong", numberOfWrong)
+}
+
+function clearLS() {
+    localStorage.removeItem("nrRight");
+    localStorage.removeItem("nrWrong");
+}
+
+function fetchLS() {
+    let oldLSRight = JSON.parse(localStorage.getItem("nrRight"))
+    let oldLSWrong = JSON.parse(localStorage.getItem("nrWrong"))
+    
+    if(oldLSRight == "undefined") {
+        numberOfRight = 0;
+    } else {
+        numberOfRight = oldLSRight
+    }
+    if(oldLSWrong == "undefined") {
+        numberOfWrong = 0;
+    } else {
+        numberOfWrong = oldLSWrong
+    }   
+    updateScore(); 
+}
+
 /** Funktion som ökar och lägger till antal rätt i en P tagg */
 function addRight() {   
     numberOfRight += 1;
@@ -238,11 +267,14 @@ function addRight() {
 function updateScore() {
     wrong.innerText = numberOfWrong;
     right.innerText = numberOfRight;
+    saveToLS()    
 }
+
 
 /** Nollställer poängen */
 function resetCount() {
     numberOfWrong = 0;
     numberOfRight = 0;
+    clearLS()
     updateScore();
 }
