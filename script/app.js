@@ -244,12 +244,12 @@ function fetchLS() {
     let oldLSRight = JSON.parse(localStorage.getItem("nrRight"))
     let oldLSWrong = JSON.parse(localStorage.getItem("nrWrong"))
     
-    if(oldLSRight == "undefined") {
+    if(oldLSRight == null) {
         numberOfRight = 0;
     } else {
         numberOfRight = oldLSRight
     }
-    if(oldLSWrong == "undefined") {
+    if(oldLSWrong == null) {
         numberOfWrong = 0;
     } else {
         numberOfWrong = oldLSWrong
