@@ -1,26 +1,27 @@
 window.addEventListener('load', main);
 
 function main() {
-    
+    newNumber()
 }
 
 /* 
-Rätt och fel meddelande
+Rätt-, fel meddelande, svårighetsgrad och rätt-, fel räknare
 */
 
-const correctAnswer = "Du är grym!";
+// Svar vid rättning
+const correctAnswer = "Rätt!";
 const wrongAnswer = "Fel, försök igen!";
+
+// Svårighetsgrad
 let difficulty = 5;
 
+// Rätt och Fel variablerna
 let numberOfWrong = 0
 let numberOfRight = 0
-
-
 
 /* 
 Alla variabler som kan nås utanför frunktioner
 */
-
 let numberOne = document.getElementById('nr1').innerText = newNumberOne();
 let numberTwo = document.getElementById('nr2').innerText = newNumberTwo();
 let mathItem = document.getElementById('mathItem');
@@ -34,22 +35,19 @@ let right = document.querySelector('#right');
 let wrong = document.querySelector('#wrong');
 let reset = document.querySelector('#resetCount');
 
-const test = document.getElementById('answer');
-console.log(disableInput);
 
+// Reset knapp och funktion
 reset.addEventListener('click', resetCount)
 
 function resetCount() {
     location.reload();
 }
 
-// const diffStd = document.getElementById('diff').innerText;
-// console.log(Number(diffStd));
-
 /* 
 Alla funktioner
 */
 
+/** Svårighetsgrad där ett värde ökar random talen */
 let diffAdd = document.querySelector('#higherNumbers').addEventListener('click', () => {
     if (difficulty == 5) {
         difficulty = 20;
@@ -102,7 +100,7 @@ function getRandomNumber(limit) {
 Funktion som körs när man trycker på "nytt tal" knappen
 */
 
-function newNumber () {
+function newNumber() {
     numberOne = document.getElementById('nr1').innerText = newNumberOne();
     numberTwo = document.getElementById('nr2').innerText = newNumberTwo();
     correctBtn.style.opacity = 1;
@@ -138,6 +136,7 @@ if (numberSum === userSum) {
     newBtn.style.display = 'flex';
     correctBtn.style.display = 'none';
 
+    // Funktion som körs och plussar antal rätt och printar ut i en P tagg
     addRight()
 
     mathItem.style.background = '#7FB069';
@@ -150,6 +149,7 @@ if (numberSum === userSum) {
     corrected.innerText = wrongAnswer;
     disableInput.value = '';
 
+    // Funktion som körs och plussar antal fel och printar ut i en P tagg
     numberOfWrong += 1;
     wrong.innerText = numberOfWrong
 
@@ -157,6 +157,7 @@ if (numberSum === userSum) {
 }
 }
 
+/** Funktion som ökar och lägger till antal rätt i en P tagg */
 function addRight() {    
 
     numberOfRight += 1;
