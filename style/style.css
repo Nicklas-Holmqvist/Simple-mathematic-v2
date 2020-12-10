@@ -55,7 +55,7 @@ h1 {
 
     color: #FFF8F0;
     
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -84,13 +84,13 @@ i {
 .math-item {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
 
     width: 25rem;
     height: 35rem;
 
-    padding: 0rem 0rem 4rem 0rem;
+    padding: 0rem 0rem 2rem 0rem;
 
     border: .5rem rgb(253, 253, 253) solid;
     border-radius: 15px;
@@ -198,7 +198,9 @@ form {
 }
 
 .correct {
-    height: 2rem;
+    text-align: center;
+    height: 3rem;
+    width: 10rem;
     font-size: 1.5rem;
 
     transition: all .5s ease;
@@ -231,6 +233,11 @@ form {
     text-align: center;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.wrong-background {
+    background-color: #FF0000;
+    transition: background 0.5s ease-in-out;
 }
 
 footer {

@@ -60,6 +60,8 @@ let addition = document.querySelector('.addition');
 let minus = document.querySelector('.minus');
 let multiply = document.querySelector('.multiply');
 
+let wrongBackground = document.querySelector('.math-container');
+
 /* 
 Alla funktioner
 */
@@ -144,6 +146,7 @@ function newStyling() {
     correctBtn.style.display = 'flex';
     correct.innerText = '';   
     mathItem.style.borderColor = '#FFFFFF'; 
+    wrongBackground.classList.remove("wrong-background")
 
 }
 
@@ -209,6 +212,7 @@ function wrongResult() {
     numberOfWrong += 1;        
     updateScore();
 
+    wrongBackground.classList.add("wrong-background")
     mathItem.style.borderColor = '#FF0000';
 }
 
