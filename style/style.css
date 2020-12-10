@@ -84,13 +84,13 @@ i {
 .math-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
 
     width: 25rem;
     height: 35rem;
 
-    padding: 0rem 0rem 1rem 0rem;
+    padding: 0rem 0rem 4rem 0rem;
 
     border: .5rem rgb(253, 253, 253) solid;
     border-radius: 15px;
@@ -106,7 +106,7 @@ i {
 
 .mathFunction {
     width: 100%;
-    height: 4rem;
+    height: 5rem;
     justify-content: space-around;
     text-align: center;
 }

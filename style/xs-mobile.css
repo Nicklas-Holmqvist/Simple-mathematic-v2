@@ -1,0 +1,9 @@
+@media (max-width:25em) {
+    h1 {
+        padding-top: 1rem;
+    }
+
+    footer {
+        padding-bottom: 1rem;
+    }
+}
