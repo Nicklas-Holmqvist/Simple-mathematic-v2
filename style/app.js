@@ -52,28 +52,13 @@ Alla funktioner
 
 let diffAdd = document.querySelector('#higherNumbers').addEventListener('click', () => {
     if (difficulty == 5) {
-        difficulty = 10;
+        difficulty = 20;
         console.log('Tal mellan 0-20')
         newNumber ()
     }
-    else if (difficulty == 10) {
-        difficulty = 20;
-        console.log('Tal mellan 0-40')
-        newNumber ()
-    }
     else if (difficulty == 20) {
-        difficulty = 30;
-        console.log('Tal mellan 0-60')
-        newNumber ()
-    }
-    else if (difficulty == 30) {
-        difficulty = 40;
-        console.log('Tal mellan 0-80')
-        newNumber ()
-    }
-    else if (difficulty == 40) {
         difficulty = 50;
-        console.log('Tal mellan 0-100')
+        console.log('Tal mellan 0-60')
         newNumber ()
     }
     else if (difficulty == 50) {
