@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background: #E2E2E2;
+    background: #d6d6d6;
     height: 100%;
 }
 
@@ -233,6 +233,10 @@ form {
     text-align: center;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.correct-background {
+ background-color: #7FB069;
 }
 
 .wrong-background {

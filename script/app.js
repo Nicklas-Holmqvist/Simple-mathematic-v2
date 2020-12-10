@@ -61,7 +61,7 @@ let addition = document.querySelector('.addition');
 let minus = document.querySelector('.minus');
 let multiply = document.querySelector('.multiply');
 
-let wrongBackground = document.querySelector('.math-container');
+let bodyBackground = document.querySelector('.math-container');
 
 /* 
 Alla funktioner
@@ -147,7 +147,8 @@ function newStyling() {
     correctBtn.style.display = 'flex';
     correct.innerText = '';   
     mathItem.style.borderColor = '#FFFFFF'; 
-    wrongBackground.classList.remove("wrong-background")
+    bodyBackground.classList.remove("wrong-background")
+    bodyBackground.classList.remove("correct-background")
 
 }
 
@@ -189,6 +190,14 @@ function rightResult() {
 
     newBtn.style.display = 'flex';
     correctBtn.style.display = 'none';
+    mathItem.style.borderColor = '#7FB069';
+
+    if (bodyBackground.classList.contains("wrong-background")) {
+        bodyBackground.classList.remove("wrong-background")
+        bodyBackground.classList.add("correct-background")
+    } else {
+        bodyBackground.classList.add("correct-background")
+    }
 
     addRight()
 
@@ -214,7 +223,7 @@ function wrongResult() {
     updateScore();
     
 
-    wrongBackground.classList.add("wrong-background")
+    bodyBackground.classList.add("wrong-background")
     mathItem.style.borderColor = '#FF0000';
 }
 
