@@ -2,6 +2,22 @@ window.addEventListener('load', main);
 
 function main() {
     newNumber()
+    addEventListeners()
+}
+
+/**  */
+let mathType = "addition"
+
+
+function addEventListeners() {
+    reset.addEventListener('click', resetCount)
+
+    correctBtn.addEventListener('click', correctedNumber)
+    newBtn.addEventListener('click', afterWrongUpdate)
+
+    addition.addEventListener('click', setAddition)
+    minus.addEventListener('click', setMinus)
+    // multiply.addEventListener('click', changeMathType)
 }
 
 /* 
@@ -22,8 +38,9 @@ let numberOfRight = 0
 /* 
 Alla variabler som kan nås utanför frunktioner
 */
-let numberOne = document.getElementById('nr1').innerText = newNumberOne();
-let numberTwo = document.getElementById('nr2').innerText = newNumberTwo();
+
+let numberOne = document.getElementById('nr1')
+let numberTwo = document.getElementById('nr2')
 let mathItem = document.getElementById('mathItem');
 let disableInput = document.getElementById('answer')
 let correctOutput = document.getElementById('correct')
@@ -34,60 +51,66 @@ let h1Tag = document.querySelectorAll(".h1");
 let right = document.querySelector('#right');
 let wrong = document.querySelector('#wrong');
 let reset = document.querySelector('#resetCount');
+let mathFunction = document.querySelector('#plus');
+let header = document.querySelector('h1');
 
+let corrected = document.getElementById('correct');
 
-// Reset knapp och funktion
-reset.addEventListener('click', resetCount)
-
-function resetCount() {
-    location.reload();
-}
+let addition = document.querySelector('.addition');
+let minus = document.querySelector('.minus');
+let multiply = document.querySelector('.multiply');
 
 /* 
 Alla funktioner
 */
 
+/** Change to addition */
+function setAddition() {
+
+    if(mathType != "addition") {
+        mathType = "addition"
+        header.innerText = "Addition"
+        mathFunction.innerText = "+"
+        newNumber()
+        mathItem.style.background = '#FF9F1C';
+        difficulty = 5;
+    }
+}
+
+/** Change to minus */
+function setMinus(){
+        if(mathType != "minus") {
+        mathType = "minus"
+        header.innerText = "Minus"
+        mathFunction.innerText = "-"
+        newNumber()
+        mathItem.style.background = "#79A6FA"
+        difficulty = 5;
+    }
+}
+
 /** Svårighetsgrad där ett värde ökar random talen */
 let diffAdd = document.querySelector('#higherNumbers').addEventListener('click', () => {
     if (difficulty == 5) {
         difficulty = 20;
-        console.log('Tal mellan 0-20')
         newNumber ()
     }
     else if (difficulty == 20) {
         difficulty = 50;
-        console.log('Tal mellan 0-60')
         newNumber ()
     }
     else if (difficulty == 50) {
         difficulty = 100;
-        console.log('Tal mellan 0-200')
         newNumber ()
     }
     else if (difficulty == 100) {
         difficulty = 200;
-        console.log('Tal mellan 0-400')
         newNumber ()
     }   else {
         difficulty = 5;
-        console.log('Tal mellan 0-10')
         newNumber()
     }
 })
-
-// Funktion för nummer 1
-function newNumberOne() {
-    let nr1 = getRandomNumber(difficulty);
-    console.log(nr1)
-    return nr1;
-}
-
-// Funktion för nummer 2
-function newNumberTwo() {
-    let nr2 = getRandomNumber(difficulty);
-    console.log(nr2)
-    return nr2
-}
 
 // Random funktion
 function getRandomNumber(limit) {
@@ -96,39 +119,66 @@ function getRandomNumber(limit) {
     return Math.ceil(randomValue);
 }
 
-/* 
-Funktion som körs när man trycker på "nytt tal" knappen
+/** När man trycker på nästa tal, kommer denna funktionen köras 
+ *  Det skapas två nya randomtal och sätts ut på hemsidan
+ *  Sedan körs funktionen newStyling, som kort nollar till ursprungsläget
 */
-
 function newNumber() {
-    numberOne = document.getElementById('nr1').innerText = newNumberOne();
-    numberTwo = document.getElementById('nr2').innerText = newNumberTwo();
+    firstValue = getRandomNumber(difficulty);
+    secondValue = getRandomNumber(firstValue);
+
+    numberOne = document.getElementById('nr1').innerText = firstValue;
+    numberTwo = document.getElementById('nr2').innerText = secondValue;
+    newStyling()
+}
+
+/** Standard styling
+ *  Körs i newNumber funktionen
+ */
+function newStyling() {
     correctBtn.style.opacity = 1;
     disableInput.readOnly = false;
-    mathItem.style.background = '#FF9F1C';
+    
     disableInput.value = '';
     newBtn.style.display = 'none';
     correctBtn.style.display = 'flex';
-    correct.innerText = '';
-    console.log(numberOfWrong);
-    console.log(numberOfRight);
+    correct.innerText = '';   
+    mathItem.style.borderColor = '#FFFFFF'; 
+
 }
 
-/* 
-Funktion som körs när man trycker på "rätta" knappen
-*/
-
-function correctedNumber () {
+/** Rättar användarens input
+ *  En if sats som kontrollerar om vilken matematisk funktion som används
+ */
+function correctedNumber() {
     let answer = document.getElementById('answer').value;
-    let corrected = document.getElementById('correct');
-    
-    let numberSum = Number(numberOne) + Number(numberTwo);
+
+    if (mathType == "addition") {
+        numberSum = Number(numberOne) + Number(numberTwo);
+    } 
+    else if (mathType == "minus") {
+        numberSum = Number(numberOne) - Number(numberTwo);
+    }
+    else if (mathType == "multiply") {
+        numberSum = Number(numberOne) * Number(numberTwo);
+    }
+
     let userSum = Number(answer);
 
-    console.log(numberSum);
+    if (numberSum === userSum) {
+        rightResult()        
 
-// Om det är rätt inmatat värde
-if (numberSum === userSum) {
+    }   else {
+        wrongResult()
+    }
+
+    
+}
+
+/** Ett svar som returneras om användarens input var rätt
+ *  Körs i correctedNumber funktionen
+ */
+function rightResult() {
     correct.innerText = correctAnswer;
 
     disableInput.readOnly = true;
@@ -136,33 +186,59 @@ if (numberSum === userSum) {
     newBtn.style.display = 'flex';
     correctBtn.style.display = 'none';
 
-    // Funktion som körs och plussar antal rätt och printar ut i en P tagg
     addRight()
 
-    mathItem.style.background = '#7FB069';
+    if (mathType === "addition") {
+        setAddition()
+    }
+    else {
+        setMinus()
+    }
 
     disableInput.style.backgroundColor = 'rgb(255,255,255)';
     disableInput.style.color = '#011627';
+}
 
-// Om det är fel inmatat värde
-}   else {
+/** Ett svar som returneras om användarens input var fel
+ *  Körs i correctedNumber funktionen
+ */
+function wrongResult() {
     corrected.innerText = wrongAnswer;
     disableInput.value = '';
 
-    // Funktion som körs och plussar antal fel och printar ut i en P tagg
-    numberOfWrong += 1;
-    wrong.innerText = numberOfWrong
+    numberOfWrong += 1;        
+    updateScore();
 
-    mathItem.style.background = 'rgb(255,0,0)';
+    mathItem.style.borderColor = '#FF0000';
 }
+
+function afterWrongUpdate() {
+    if (mathType === "addition") {
+        newNumber()
+        setAddition()
+        
+    }
+    else {
+        newNumber()
+        setMinus()
+    }
 }
 
 /** Funktion som ökar och lägger till antal rätt i en P tagg */
-function addRight() {    
-
+function addRight() {   
     numberOfRight += 1;
-    right.innerText = numberOfRight;
-    
+    updateScore();    
 }
 
+/** Uppdaterar poängen för rätt och fel */
+function updateScore() {
+    wrong.innerText = numberOfWrong;
+    right.innerText = numberOfRight;
+}
 
+/** Nollställer poängen */
+function resetCount() {
+    numberOfWrong = 0;
+    numberOfRight = 0;
+    updateScore();
+}

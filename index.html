@@ -33,7 +33,12 @@
     <main>
         <div class="math-container">
             <div class="math-item" id="mathItem">
-                <h1>Simpel Addition</h1>
+                <div class="mathFunction flex row">
+                    <div class="addition flex center"><i class="fas fa-plus"></i></div>
+                    <div class="minus flex center"><i class="fas fa-minus"></i></div>
+                    <!-- <div class="multiply flex center"><i class="fas fa-times"></i></div> -->
+                </div>
+                <h1>Addition</h1>
                 <div class="item-number">
                     <p id="nr1" class="nr1">5</p>
                     <p id="plus">+</p>
@@ -42,9 +47,8 @@
                     <input type="tel" id="answer" class="user-input" autofocus>
                 </div>                
                 <form id="Myform">
-                <input type="button" class="correct-btn" id="correctBtn" value="Rätta" onclick="correctedNumber()">
-                <input type="button" class="correct-btn new" id="newBtn" value="Nytt tal" onclick="newNumber()">
-                <!-- <input type="button" class="correct-btn" id="newGabeBtn" value="Nytt spel" onclick="startNewGame()"> -->                
+                <input type="button" class="correct-btn" id="correctBtn" value="Rätta">
+                <input type="button" class="correct-btn new" id="newBtn" value="Nytt tal">              
                 </form>
                 <p id="correct" class="correct"></p>
                 <div class="rightwrong flex row">
