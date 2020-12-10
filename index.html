@@ -31,7 +31,6 @@
         
     </header>
     <main>
-        <button id="test">testa</button>
         <div class="math-container">
             <div class="math-item" id="mathItem">
                 <h1>Simpel Addition</h1>
@@ -48,6 +47,20 @@
                 <!-- <input type="button" class="correct-btn" id="newGabeBtn" value="Nytt spel" onclick="startNewGame()"> -->                
                 </form>
                 <p id="correct" class="correct"></p>
+                <div class="rightwrong flex row">
+                    <div class="right flex column">
+                        <p>Antal rätt</p>
+                        <p id="right">0</p>
+                    </div>
+                    <div class="wrong flex column">
+                        <p>Antal fel</p>
+                        <p id="wrong">0</p>
+                    </div>
+                </div>
+                <div class="reset flex row">
+                    <p id="higherNumbers">Högre tal</p>
+                    <p id="resetCount">Nollställ</p>
+                </div>
             </div>
         </div>
     </main>

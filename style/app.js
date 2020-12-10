@@ -1,3 +1,9 @@
+window.addEventListener('load', main);
+
+function main() {
+    
+}
+
 /* 
 Rätt och fel meddelande
 */
@@ -6,11 +12,9 @@ const correctAnswer = "Du är grym!";
 const wrongAnswer = "Fel, försök igen!";
 let difficulty = 5;
 
-let numberOfWrong = 0;
-let numberOfRight = 0;
+let numberOfWrong = 0
+let numberOfRight = 0
 
-console.log(numberOfWrong);
-console.log(numberOfRight);
 
 
 /* 
@@ -26,9 +30,18 @@ let newBtn = document.getElementById('newBtn');
 let correctBtn = document.getElementById('correctBtn');
 let pTag = document.querySelectorAll("p");
 let h1Tag = document.querySelectorAll(".h1");
+let right = document.querySelector('#right');
+let wrong = document.querySelector('#wrong');
+let reset = document.querySelector('#resetCount');
 
 const test = document.getElementById('answer');
 console.log(disableInput);
+
+reset.addEventListener('click', resetCount)
+
+function resetCount() {
+    location.reload();
+}
 
 // const diffStd = document.getElementById('diff').innerText;
 // console.log(Number(diffStd));
@@ -37,7 +50,7 @@ console.log(disableInput);
 Alla funktioner
 */
 
-let diffAdd = document.querySelector('#test').addEventListener('click', () => {
+let diffAdd = document.querySelector('#higherNumbers').addEventListener('click', () => {
     if (difficulty == 5) {
         difficulty = 10;
         console.log('Tal mellan 0-20')
@@ -140,7 +153,7 @@ if (numberSum === userSum) {
     newBtn.style.display = 'flex';
     correctBtn.style.display = 'none';
 
-    numberOfRight += 1;
+    addRight()
 
     mathItem.style.background = '#7FB069';
 
@@ -153,7 +166,17 @@ if (numberSum === userSum) {
     disableInput.value = '';
 
     numberOfWrong += 1;
+    wrong.innerText = numberOfWrong
 
     mathItem.style.background = 'rgb(255,0,0)';
 }
 }
+
+function addRight() {    
+
+    numberOfRight += 1;
+    right.innerText = numberOfRight;
+    
+}
+
+

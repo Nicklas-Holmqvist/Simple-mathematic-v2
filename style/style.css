@@ -21,6 +21,22 @@ main {
     width: 100%;
 }
 
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.width {
+    width: 100%;
+}
+
 .math-container {
     height: 100%;
 
@@ -150,6 +166,34 @@ form {
     font-size: 1.5rem;
 
     transition: all .5s ease;
+}
+
+.rightwrong {
+    padding-top: 1rem;
+    width: 15rem;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rightwrong p {
+    padding-top: 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.reset {
+    padding-top: 1rem;
+    width: 15rem;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reset p {
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 footer {
