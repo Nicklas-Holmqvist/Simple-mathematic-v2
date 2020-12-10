@@ -1,7 +1,8 @@
-# Simple mathemetic
+# Simple mathemetic v2
 
 ## What is it?
 It is a simple mathematic app with addition and subtraction for children and some older kids around 10 years.
+Based on my first Simple mathematic, this have count and some other feutures.
 
 ## How does it work?
 There is an random number function that choose the numbers and the second number is never larger than the first one.
