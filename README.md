@@ -6,6 +6,8 @@ Based on my first Simple mathematic, this have count and some other feutures.
 
 On desktop it has a locked size and on smaller screens it fills the screen.
 
+I created this app in the start of our javascript course, and updated it before end 2020.
+
 ## How does it work?
 There is an random number function that choose the numbers and the second number is never larger than the first one.
 
