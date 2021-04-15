@@ -41,4 +41,5 @@ Subtraction
 ![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871166-4b428400-9df9-11eb-9400-c467ac5a2d7a.JPG)
 
 Tablet and mobile
+
 ![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871455-952b6a00-9df9-11eb-9762-9df82766c34b.JPG)
