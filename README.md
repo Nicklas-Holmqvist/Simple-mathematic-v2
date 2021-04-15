@@ -25,3 +25,17 @@ But if you answer the wrong answer all the screen turns red until the correct an
   
 ## Try it!?
 [Link](https://www.nicklasholmqvist.se/portfolio/simpel-matematik/index.html)
+
+## Visual
+
+Startpage and additon
+![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871002-1c2c1280-9df9-11eb-9614-e5d7ee6f896a.JPG)
+
+Wrong answer
+![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871068-2e0db580-9df9-11eb-9309-e623ca7f9b9a.JPG)
+
+Correct answer
+![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871120-3cf46800-9df9-11eb-9336-d35ee3a009e6.JPG)
+
+Subtraction
+![Skärmklipp](https://user-images.githubusercontent.com/70426543/114871166-4b428400-9df9-11eb-9400-c467ac5a2d7a.JPG)
