@@ -24,7 +24,7 @@ But if you answer the wrong answer all the screen turns red until the correct an
   - The reset button clears all the local storage
   
 ## Try it!?
-[Link](https://www.nicklasholmqvist.se/portfolio/simpel-matematik/index.html)
+[Link](https://nicklas-holmqvist.github.io/Simple-mathematic-v2/)
 
 ## Visual
 
